@@ -18,9 +18,20 @@
         Insert_contravention($dossier, $plaque, $couleur, $marque, $code_agent, $adresse, $offense, $montant, $date);
         if (isset($_GET['No_Fiche']))
         {
-            $no_fiche= $_GET['No_Fiche'];
             $date_paiement = date_add($date, date_interval_create_from_date_string('15 days'));
-
+            $mysqli = use_mysqli();
+            $sql = "SELECT no_fiche FROM contravention WHERE
+                    No_Dossier = '$dossier' AND
+                    Plaque = '$plaque' AND
+                    Couleur = '$couleur' AND
+                    Marque = '$marque' AND
+                    Code_Agent = '$code_agent' AND
+                    Adresse = '$adresse' AND
+                    Offense = '$offense' AND
+                    Montant = '$montant' AND
+                    Date_Offense = '$date'";
+            $result = $mysqli -> query($sql);
+            
             Insert_DGI($no_fiche, $montant, 'Non Paye', $date_paiement);
         }
         else
