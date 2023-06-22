@@ -7,13 +7,13 @@
   flex-direction: column;
   width: 70%;
   margin-left: 22em;
-  padding: 10em  10em;
+  --padding: 10em  10em;
   justify-content: center;
   --align-items: center;
   --margin-bottom: 12em;
   border: yellow solid 0.5em;
+  overflow: scroll;
 }
-
 
 
 
@@ -22,8 +22,7 @@ table {
     border-collapse: collapse;
     width: 80%;
     border: yellow Solid 1em;
-    --margin-left: 18em;
-    --margin-top: 12em;
+    margin: 12em;
   }
   
   table td, table th {
@@ -43,8 +42,12 @@ table {
     color: white;
   }
 
-  table th a{
+   table th a{
     color: white;
+  }
+
+  table td a{
+    color: rgb(35, 27, 27);
   }
 
 h1{

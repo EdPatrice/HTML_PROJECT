@@ -1,6 +1,16 @@
 <?php
                  include_once("Page_gestion.php");
                  include_once("./Contravention/contravention_queries.php");
+                 if (isset($_GET['No_Fiche']))
+                 {
+                    $no_fiche= $_GET['No_Fiche'];
+                    $tab= Select_contravention_no_fiche($no_fiche);
+
+                 }
+                 else {
+                    header("Location:listeoffense.php");
+                    }
+                 
            ?>
 
 
@@ -10,6 +20,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src="https://kit.font-awesome.com/a076d05399,js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+   <script src="https://kit.font-awesome.com/a076d05399,js"></script>
     <link rel="stylesheet" href="./Contravention/contravention.css">
   <link rel="stylesheet" href="replicanav_acceuil.css">
   <link rel="stylesheet" href="page_gestion.css">
@@ -75,13 +91,13 @@
                     <table>
                         <tr id="askdossier"> 
                             <td class="conducteur">
-                                    <input type="text" name ="TxtNodossier" placeholder="No Dossier" required>
+                                    <input type="text" name ="TxtNoDossier" placeholder="No Dossier" value="<?php echo($tab[0]['No_Dossier']) ?>" required>
                             </td>
                             <td class="conducteur">       <!--utilisateur-->                                  
-                                <input type="text" name ="TxtCouleur" placeholder="Couleur" required>
+                                <input type="text" name ="TxtCouleur" placeholder="Couleur" value="<?php echo($tab[0]['Couleur']) ?>" required>
                             </td>
                             <td class="conducteur">
-                                <input type="text" name ="Txtmarque" placeholder="Marque" required>
+                                <input type="text" name ="TxtMarque" placeholder="Marque" value="<?php echo($tab[0]['Marque']) ?>" required>
                             </td>
                         </tr>
 
@@ -91,23 +107,23 @@
                                 </td>-->
 
                                 <td class="conducteur_agent1">
-                                  <input type="text" name ="Txtplaque" placeholder="Plaque vehicule" required>
+                                  <input type="text" name ="TxtPlaque" placeholder="Plaque vehicule"  value="<?php echo($tab[0]['Plaque_vehicule']) ?>" required>
                                 </td>
                         </tr>
 
                         <tr>                                    
                             <td class="conducteur_agent1">
-                                <input type="text" name ="Txtcode" placeholder="Code agent" required>
+                                <input type="text" name ="TxtCodeAgent" placeholder="Code agent"  value="<?php echo($tab[0]['Code_agent']) ?>" required>
                             </td>
                         </tr>
                         
                         <tr >
                                 <td  class="conducteur_agent" >
-                                  <input type="text" name ="TxtAdresse" placeholder="Adresse" required>
+                                  <input type="text" name ="TxtAdresse" placeholder="Adresse" value="<?php echo($tab[0]['Adresse']) ?>" required>
                                 </td>
 
                                 <td class="conducteur_agent">
-                                  <input type="number" name ="Txtmontant" placeholder="Montant a payer" required>
+                                  <input type="number" name ="TxtMontant" placeholder="Montant a payer" value="<?php echo($tab[0]['Montant_a_payer']) ?>" required>
                                 </td>
                         </tr>
                         
@@ -115,7 +131,7 @@
                           <td class="conducteur1">
                                 <!--Date input-->
                                 <label for="Date d'offense">Date d'offense</label>
-                                <input type="date" name="Dtdoffense">
+                                <input type="date" name="Dtdoffense" value="<?php echo($tab[0]['Date_contravention']) ?>">
                             </td>
                             
                         </tr>                                              
@@ -123,16 +139,135 @@
 
                         <tr>
                             <td class="">
-                            <select class="offense" name="offense" >
+                            <select class="offense" name="offense" >  
+                                <!--................................................. -->
+                                <?php 
+                                        if($tab[0]['Article_violation']== "Article 101-Signalisation")
+                                        { 
+                                    ?>
                                             <option selected disabled>Article violee.</option>
-                                            <option value="Article 101-Signalisation">Article 101-Signalisation</option>
-                                            <option value="Article 82-limite vitesse ">Article 82-limite vitesse</option>
-                                            <option value="Article 40-Disposition d'un permis">Article 40-Disposition d'un permis</option>
-                                            <option value="Article 17-Disposition de carte d'identification">Article 17-Disposition de carte d'identification</option>
-                                            <option value="Article 44-Etat d'ivresse">Article 44-Etat d'ivresse</option>
+                                            <option value="Article 101-Signalisation" selected>Article 101-Signalisation</option>
+                                            <option value="Article 82-limite vitesse">Article 82-limite vitesse</option>
+                                            <option value="Article 40-Disposition d un permis">Article 40-Disposition d'un permis</option>
+                                            <option value="Article 17-Disposition de carte d identification">Article 17-Disposition de carte d'identification</option>
+                                            <option value="Article 44-Etat d ivresse">Article 44-Etat d'ivresse</option>
                                             <option value="Article 313-Disposition de feux">Article 313-Disposition de feux</option>
                                             <option value="Article 318-Emission de gaz">Article 318-Emission de gaz</option>
                                             <option value="Article 322-Plaque immatriculation">Article 322-Plaque immatriculation</option>
+                                        <?php }?>
+
+
+                                <!--................................................. -->
+                                    <?php 
+                                        if($tab[0]['Article_violation']== "Article 82-limite vitesse")
+                                        { 
+                                    ?>
+                                           <option selected disabled>Article violee.</option>
+                                            <option value="Article 101-Signalisation">Article 101-Signalisation</option>
+                                            <option value="Article 82-limite vitesse" selected >Article 82-limite vitesse</option>
+                                            <option value="Article 40-Disposition d un permis">Article 40-Disposition d'un permis</option>
+                                            <option value="Article 17-Disposition de carte d identification">Article 17-Disposition de carte d'identification</option>
+                                            <option value="Article 44-Etat d ivresse">Article 44-Etat d'ivresse</option>
+                                            <option value="Article 313-Disposition de feux">Article 313-Disposition de feux</option>
+                                            <option value="Article 318-Emission de gaz">Article 318-Emission de gaz</option>
+                                            <option value="Article 322-Plaque immatriculation">Article 322-Plaque immatriculation</option>
+                                        <?php }?>
+
+                                <!--................................................................................................ -->
+                                    <?php 
+                                        if($tab[0]['Article_violation']== "Article 40-Disposition d un permis")
+                                        { 
+                                    ?>
+                                            <option selected disabled>Article viole.</option>
+                                            <option value="Article 101-Signalisation">Article 101-Signalisation</option>
+                                            <option value="Article 82-limite vitesse" >Article 82-limite vitesse</option>
+                                            <option value="Article 40-Disposition d un permis" selected>Article 40-Disposition d'un permis</option>
+                                            <option value="Article 17-Disposition de carte d identification">Article 17-Disposition de carte d'identification</option>
+                                            <option value="Article 44-Etat d ivresse">Article 44-Etat d'ivresse</option>
+                                            <option value="Article 313-Disposition de feux">Article 313-Disposition de feux</option>
+                                            <option value="Article 318-Emission de gaz">Article 318-Emission de gaz</option>
+                                            <option value="Article 322-Plaque immatriculation">Article 322-Plaque immatriculation</option>
+                                            <?php }?>
+
+                                <!--................................................................................... -->
+                                    <?php 
+                                        if($tab[0]['Article_violation']== "Article 17-Disposition de carte d identification")
+                                        { 
+                                    ?>
+                                            <option selected disabled>Article viole.</option>
+                                            <option value="Article 101-Signalisation">Article 101-Signalisation</option>
+                                            <option value="Article 82-limite vitesse"  >Article 82-limite vitesse</option>
+                                            <option value="Article 40-Disposition d un permis">Article 40-Disposition d'un permis</option>
+                                            <option value="Article 17-Disposition de carte d identification" selected>Article 17-Disposition de carte d'identification</option>
+                                            <option value="Article 44-Etat d ivresse">Article 44-Etat d'ivresse</option>
+                                            <option value="Article 313-Disposition de feux">Article 313-Disposition de feux</option>
+                                            <option value="Article 318-Emission de gaz">Article 318-Emission de gaz</option>
+                                            <option value="Article 322-Plaque immatriculation">Article 322-Plaque immatriculation</option>
+                                            <?php }?>
+
+                                <!--....................................................................................... -->
+                                    <?php 
+                                        if($tab[0]['Article_violation']== "Article 44-Etat d ivresse")
+                                        { 
+                                    ?>
+                                            <option selected disabled>Article violee.</option>
+                                           <option value="Article 101-Signalisation">Article 101-Signalisation</option>
+                                            <option value="Article 82-limite vitesse" >Article 82-limite vitesse</option>
+                                            <option value="Article 40-Disposition d un permis">Article 40-Disposition d'un permis</option>
+                                            <option value="Article 17-Disposition de carte d identification">Article 17-Disposition de carte d'identification</option>
+                                            <option value="Article 44-Etat d ivresse" selected>Article 44-Etat d'ivresse</option>
+                                            <option value="Article 313-Disposition de feux">Article 313-Disposition de feux</option>
+                                            <option value="Article 318-Emission de gaz">Article 318-Emission de gaz</option>
+                                            <option value="Article 322-Plaque immatriculation">Article 322-Plaque immatriculation</option>
+                                            <?php }?>
+
+                                <!--................................................................................................. -->
+                                <?php 
+                                        if($tab[0]['Article_violation']== "Article 313-Disposition de feux")
+                                        { 
+                                    ?>
+                                            <option selected disabled>Article violee.</option>
+                                           <option value="Article 101-Signalisation">Article 101-Signalisation</option>
+                                            <option value="Article 82-limite vitesse"  >Article 82-limite vitesse</option>
+                                            <option value="Article 40-Disposition d un permis">Article 40-Disposition d'un permis</option>
+                                            <option value="Article 17-Disposition de carte d identification">Article 17-Disposition de carte d'identification</option>
+                                            <option value="Article 44-Etat d ivresse">Article 44-Etat d'ivresse</option>
+                                            <option value="Article 313-Disposition de feux" selected>Article 313-Disposition de feux</option>
+                                            <option value="Article 318-Emission de gaz">Article 318-Emission de gaz</option>
+                                            <option value="Article 322-Plaque immatriculation">Article 322-Plaque immatriculation</option>
+                                            <?php }?>
+
+                                <!--.................................................................................................. -->
+                                    <?php 
+                                        if($tab[0]['Article_violation']== "Article 318-Emission de gaz")
+                                        { 
+                                    ?>
+                                            <option selected disabled>Article violee.</option>
+                                           <option value="Article 101-Signalisation">Article 101-Signalisation</option>
+                                            <option value="Article 82-limite vitesse" >Article 82-limite vitesse</option>
+                                            <option value="Article 40-Disposition d un permis">Article 40-Disposition d'un permis</option>
+                                            <option value="Article 17-Disposition de carte d identification">Article 17-Disposition de carte d'identification</option>
+                                            <option value="Article 44-Etat d ivresse">Article 44-Etat d'ivresse</option>
+                                            <option value="Article 313-Disposition de feux">Article 313-Disposition de feux</option>
+                                            <option value="Article 318-Emission de gaz" selected>Article 318-Emission de gaz</option>
+                                            <option value="Article 322-Plaque immatriculation">Article 322-Plaque immatriculation</option>
+                                            <?php }?>
+
+                                <!--................................................................................................. -->
+                                    <?php 
+                                        if($tab[0]['Article_violation'] == "Article 322-Plaque immatriculation")
+                                        { 
+                                    ?>
+                                            <option selected disabled>Article violee.</option>
+                                            <option value="Article 101-Signalisation">Article 101-Signalisation</option>
+                                            <option value="Article 82-limite vitesse"  >Article 82-limite vitesse</option>
+                                            <option value="Article 40-Disposition d un permis">Article 40-Disposition d'un permis</option>
+                                            <option value="Article 17-Disposition de carte d identification">Article 17-Disposition de carte d'identification</option>
+                                            <option value="Article 44-Etat d ivresse">Article 44-Etat d'ivresse</option>
+                                            <option value="Article 313-Disposition de feux">Article 313-Disposition de feux</option>
+                                            <option value="Article 318-Emission de gaz">Article 318-Emission de gaz</option>
+                                            <option value="Article 322-Plaque immatriculation" selected>Article 322-Plaque immatriculation</option>
+                                            <?php }?>
                                 </select>
                             </td>
                         </tr>    
@@ -140,7 +275,7 @@
 
                     <!--Insert send button-->
                     <div class="send_button">
-                        <input type="submit" value="Enregistrer offense" name="BtnEnvoyer"> 
+                        <input type="submit" value="Modifier offense" name="BtnEnvoyer"> 
                     </div>  
                 </form>  
 
@@ -151,31 +286,34 @@
 <?php
         if(isset($_POST['BtnEnvoyer']))
         {
-            $no_dossier = $_POST['TxtNodossier'];
-            $plaque_vehicule = $_POST['Txtplaque'];
-            $couleur = $_POST['TxtCouleur'];
-            $marque = $_POST['Txtmarque'];
-            $code_agent = $_POST['Txtcode'];
-            $adresse = $_POST['TxtAdresse'];
-            $article_violation = $_POST['offense'];
-            $montant_a_payer = $_POST['Txtmontant'];
-            $date_contravention = $_POST['Dtdoffense'];
+        $dossier = $_POST['TxtNoDossier'];
+        $couleur = $_POST['TxtCouleur'];
+        $marque = $_POST['TxtMarque'];
+        $plaque = $_POST['TxtPlaque'];
+        $code_agent = $_POST['TxtCodeAgent'];
+        $adresse = $_POST['TxtAdresse'];
+        $montant = $_POST['TxtMontant'];
+        $date = $_POST['Dtdoffense'];
+        $offense = $_POST['offense'];
 
-            Insert_contravention ($no_dossier, $plaque_vehicule, $couleur, $marque, $code_agent, $adresse, $article_violation, $montant_a_payer, $date_contravention);
+        Update_contravention($no_fiche, $dossier, $plaque, $couleur, $marque, $code_agent, $adresse, $offense, $montant, $date);
+        header("Location:listeoffense.php");
         }
     ?>
 <!--.....................................................................................................................................-->
 <!--FOOTER-->
 <div class="center_element">
-    <div class="footer">
-        <div class="container">
-            <div class="row">
+        <div class="footer">
+                <div class="container">
+                <div class="row">
+
+
                 <div class="footer-col">
                     <h2>Compagnie</h2>
                     <ul>  
-                        <li><a href="A propos.html#apropos">A propos</a></li>
-                        <li><a href="A propos.html#services">Nos Services</a></li>
-                        <li><a href="A propos.html#politique">Politique de confidentailite</a></li>                   
+                        <li><a href="./Contravention/contravention.php">Contravention</a></li>
+                        <li><a href="#">Modifier profil</a></li>
+                        <li><a href="#">Ajouter</a></li>                   
                     </ul>
                 </div>
 
@@ -183,10 +321,10 @@
                 <div class="footer-col">
                     <h2>Aide</h2>
                     <ul>  
-                        <li><a href="Contact.html">Questions et Reponses</a></li>
-                        <li><a href="Commandes.html">Expedition</a></li>
-                        <li><a href="A propos.html">Retour</a></li>
-                        <li><a href="Commandes.html">Etat de commande</a></li>
+                        <li><a href="#">Questions et Reponses</a></li>
+                        <li><a href="#">DGI</a></li>
+                        <li><a href="#">Liste</a></li>
+                        <li><a href="#">Qa</a></li>
                         <li><a href="A propos.html">Options de paiement</a></li>                   
                     </ul>
                 </div>
@@ -194,15 +332,18 @@
                 <div class="footer-col">
                     <h2>Contact</h2>
                     <div class="lienssociaux">
-                        <a  target="_blank" href="https://www.facebook.com/index.php"><i class="fab fa-facebook-f"></i></a>
-                        <a target="_blank" href="https://twitter.com/login"><i class="fab fa-twitter"></i></a>
-                        <a target="_blank"href="https://www.instagram.com/?hl=en"><i class="fab fa-instagram"></i></a>
-                        <a target="_blank"href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                        <a  target="_blank" href="https://www.facebook.com/pnh.ht/?locale=fr_FR"><i class="fab fa-facebook-f"></i></a>
+                        <a target="_blank" href="https://twitter.com/pnh_officiel?lang=en"><i class="fab fa-twitter"></i></a>
+                        <a target="_blank"href="https://www.instagram.com/pnh_officiel/?hl=en"><i class="fab fa-instagram"></i></a>
+                        <a target="_blank"href="https://ht.linkedin.com/in/sprp-pnh-b422aa125"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    </div>
+
 </div>
 
 </body>
