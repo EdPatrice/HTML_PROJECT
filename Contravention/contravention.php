@@ -61,7 +61,7 @@
             <?php
                 if (isset($_SESSION['codeAgent']))
                 {
-                    echo "<div class='session_info'> Connecte en tant que".$_SESSION['codeAgent']."</div>";
+                    echo "<div class='session_info'> Connecte en tant que ".$_SESSION['codeAgent']."</div>";
                 }
                 else
                 {
