@@ -2,6 +2,7 @@
     session_start();
 
     include_once("contravention_queries.php");
+    include_once("dgi.php");
     if(isset($_POST['BtnEnvoyer']))
     {
         $dossier = $_POST['TxtNoDossier'];
@@ -15,6 +16,15 @@
         $offense = $_POST['offense'];
 
         Insert_contravention($dossier, $plaque, $couleur, $marque, $code_agent, $adresse, $offense, $montant, $date);
+        if (isset($_GET['No_Fiche']))
+        {
+           $no_fiche= $_GET['No_Fiche'];
+           $date_paiement = date_add($date, date_interval_create_from_date_string('15 days'));
+
+           Insert_DGI ($no_fiche, $montant, 'Non paye', $date_paiement);
+          //Update_DGI ($no_fiche, $montant, 'Paye', $date_paiement);
+
+        }
         header("Location: ../listeoffense.php");
     }
 
