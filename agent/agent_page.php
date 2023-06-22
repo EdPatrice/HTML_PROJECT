@@ -1,16 +1,16 @@
 <?php
     include_once('../Page_gestion.php');
 
-    include_once("conducteur.php");
+    include_once("agent.php");
     if(isset($_POST['BtnEnvoyer']))
     {
-        $dossier = $_POST['TxtNoDossier'];
+        $codeAgent = $_POST['TxtCodeAgent'];
+        $affectation = $_POST['TxtAffectation'];
         $nom = $_POST['TxtNom'];
         $prenom = $_POST['TxtPrenom'];
         $sexe = $_POST['RdSexe'];
-        $nif = $_POST['TxtNIF'];
 
-        Insert_conducteur ($dossier, $nom, $prenom, $sexe, $nif);
+        Insert_agent ($codeAgent, $affectation, $nom, $prenom, $sexe);
         //header("Location: ../listeoffense.php");
     }
 ?>
@@ -23,7 +23,7 @@
     <link rel="stylesheet" type="text/css" href="../Contravention/contravention.css">
     <link rel="stylesheet" type="text/css" href="../replicanav_acceuil.css">
     <link rel="stylesheet" type="text/css" href="../Page_gestion.css">
-    <title>Enregistrer conducteur</title>
+    <title>Enregistrer un agent</title>
     <style>
         #gender1
         {
@@ -56,18 +56,24 @@
                 }
             ?>
             <div class="header1">
-                Enregistrer un conducteur
+                Enregistrer un agent
             </div>
 
            <div class="contenu">
               <form action="" method="post">
 
               <table>
-                        <tr id="askdossier"> 
+                        <tr id="conducteur_agent1"> 
                             <td class="conducteur">
-                                    <input type="text" name ="TxtNoDossier" placeholder="No Dossier" required>
+                                    <input type="text" name ="TxtCodeAgent" placeholder="Code agent" required>
                             </td>
                             <td class="conducteur">       <!--utilisateur-->                                  
+                                <input type="text" name ="TxtAffectation" placeholder="Affectation"  required>
+                            </td>
+                        </tr>
+
+                        <tr class= "conducteur_agent1">
+                            <td class="conducteur">
                                 <input type="text" name ="TxtNom" placeholder="Nom"  required>
                             </td>
                             <td class="conducteur">
@@ -82,13 +88,7 @@
                             <td id = "gender2">
                                 <input type="radio" name="RdSexe" id="" value="Feminin">Feminin                                
                             </td>
-                        </tr>
-
-                        <tr>                                    
-                            <td class="conducteur_agent1">
-                                <input type="text" name ="TxtNIF" placeholder="NIF" required>
-                            </td>
-                        </tr>       
+                        </tr>      
                            
                     </table>
 

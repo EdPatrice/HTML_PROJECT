@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="page_gestion.css">
     <link rel="stylesheet" href="replicanav_acceuil.css">
     
-    <title>Barre de Navigation</title>
+    <title>Page de gestion</title>
 </head>
 <body>
         
@@ -75,6 +75,7 @@
                                 echo "<li><a href='#'><ion-icon name='clipboard-outline'></ion-icon></i> Lister offense</a></li>"; //<!-- the clipboard list icons-->
                                 echo "<li><a href='../conducteur/conducteur_page.php'><ion-icon name='person-outline'></ion-icon></i> Ajouter un conducteur</a></li>";  //<!-- the user icons-->
                                 echo "<li><a href='#'><ion-icon name='newspaper-outline'></ion-icon></i> Lister utilisateur</a></li>";  //<!-- the scroll looking icons-->
+                                echo "<li><a href='#'><ion-icon name='newspaper-outline'></ion-icon></i> Enregistrer agent</a></li>";  //<!-- the scroll looking icons-->
                             }
                         }
                      ?>

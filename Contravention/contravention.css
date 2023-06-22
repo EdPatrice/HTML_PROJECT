@@ -54,8 +54,8 @@
 
 .contenu form table tr td {
 
-     display: flex;
-    justify-items: center;
+    display: flex;
+    justify-content: center;
     align-items: center;
     display: block;
     width: 100%;
