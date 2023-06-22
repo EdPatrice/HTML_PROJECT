@@ -1,7 +1,7 @@
 <?php
     session_start();
      include("Page_gestion.php");
-     include_once(__DIR__.'\Contravention\contravention_queries.php');
+     include_once('contravention_queries.php');
 
 ?>
 <!DOCTYPE html>
@@ -154,7 +154,7 @@
           <th>Article violation</th>
           <th>Montant a payer</th>
           <th> Date de contravention</th>
-          <th><a href="./Contravention/contravention.php">Nouveau</a></th>
+          <th><a href="contravention.php">Nouveau</a></th>
           <?php 
                $tab= Select_contraventions();
                

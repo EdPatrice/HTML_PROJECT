@@ -1,6 +1,6 @@
 <?php
                  include_once("Page_gestion.php");
-                 include_once("./Contravention/contravention_queries.php");
+                 include_once("contravention_queries.php");
                  if (isset($_GET['No_Fiche']))
                  {
                     $no_fiche= $_GET['No_Fiche'];
@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="./Contravention/contravention.css">
   <link rel="stylesheet" href="replicanav_acceuil.css">
   <link rel="stylesheet" href="page_gestion.css">
-  <link rel="stylesheet" href="./footer/footer.css">
+  <link rel="stylesheet" href="footer.css">
 </head>
 <body>
 <!--had to re-add the header because the resources and pages couldn't be found-->
@@ -303,7 +303,7 @@
 <!--.....................................................................................................................................-->
 <!--FOOTER-->
 <div class="center_element">
-        <div class="footer">
+<div class="footer">
                 <div class="container">
                 <div class="row">
 
@@ -311,9 +311,9 @@
                 <div class="footer-col">
                     <h2>Compagnie</h2>
                     <ul>  
-                        <li><a href="./Contravention/contravention.php">Contravention</a></li>
-                        <li><a href="#">Modifier profil</a></li>
-                        <li><a href="#">Ajouter</a></li>                   
+                        <li><a href="Acceuil.html">A propos</a></li>
+                        <li><a href="Acceuil.html">Nos Services</a></li>
+                        <li><a href="Acceuil.html">Politique de confidentailite</a></li>                   
                     </ul>
                 </div>
 
@@ -321,27 +321,23 @@
                 <div class="footer-col">
                     <h2>Aide</h2>
                     <ul>  
-                        <li><a href="#">Questions et Reponses</a></li>
-                        <li><a href="#">DGI</a></li>
-                        <li><a href="#">Liste</a></li>
-                        <li><a href="#">Qa</a></li>
-                        <li><a href="A propos.html">Options de paiement</a></li>                   
+                        <li><a href="Acceuil.html">Questions et Reponses</a></li>
+                        <li><a href="Acceuil.html">QaA</a></li>
+                        <li><a href="Acceuil.html">Aide</a></li>                
                     </ul>
                 </div>
 
                 <div class="footer-col">
                     <h2>Contact</h2>
                     <div class="lienssociaux">
-                        <a  target="_blank" href="https://www.facebook.com/pnh.ht/?locale=fr_FR"><i class="fab fa-facebook-f"></i></a>
-                        <a target="_blank" href="https://twitter.com/pnh_officiel?lang=en"><i class="fab fa-twitter"></i></a>
-                        <a target="_blank"href="https://www.instagram.com/pnh_officiel/?hl=en"><i class="fab fa-instagram"></i></a>
-                        <a target="_blank"href="https://ht.linkedin.com/in/sprp-pnh-b422aa125"><i class="fab fa-linkedin-in"></i></a>
+                        <a  target="_blank" href="https://www.facebook.com/index.php"><i class="fab fa-facebook-f"></i></a>
+                        <a target="_blank" href="https://twitter.com/login"><i class="fab fa-twitter"></i></a>
+                        <a target="_blank"href="https://www.instagram.com/?hl=en"><i class="fab fa-instagram"></i></a>
+                        <a target="_blank"href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
     </div>
 
 </div>

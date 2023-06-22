@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up</title>
     <link rel="stylesheet" type="text/css" href="sign up.css">
-    <link rel="stylesheet" type="text/css" href="./footer/footer.css">
+    <link rel="stylesheet" type="text/css" href="footer.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -47,9 +47,9 @@
                 </ul>
             -->
 
-            <a href="acceuil.html">Acceuil</a>
-            <a href="#">Contraventions</a>
-            <a href="#">Contacts</a>
+            <a href="Acceuil.html">Acceuil</a>
+            <a href="contravention.php">Contraventions</a>
+             
             
         </div>
     </div>
@@ -176,9 +176,9 @@
                             
                             <!--New div with a link-->
                             <div class="create_account_link">
-                                <a href="#"> Vous possedez deja un compte? </a>
+                                <a href="Log in page.php"> Vous possedez deja un compte? </a>
                                 
-                                <a href="#">Se connecter </a>
+                                <a href="Log in page.php">Se connecter </a>
                             </div>
 
                         </form>
@@ -196,9 +196,9 @@
                 <div class="footer-col">
                     <h2>Compagnie</h2>
                     <ul>  
-                        <li><a href="A propos.html#apropos">A propos</a></li>
-                        <li><a href="A propos.html#services">Nos Services</a></li>
-                        <li><a href="A propos.html#politique">Politique de confidentailite</a></li>                   
+                        <li><a href="Acceuil.html">A propos</a></li>
+                        <li><a href="Acceuil.html">Nos Services</a></li>
+                        <li><a href="Acceuil.html">Politique de confidentailite</a></li>                   
                     </ul>
                 </div>
 
@@ -206,11 +206,9 @@
                 <div class="footer-col">
                     <h2>Aide</h2>
                     <ul>  
-                        <li><a href="Contact.html">Questions et Reponses</a></li>
-                        <li><a href="Commandes.html">Expedition</a></li>
-                        <li><a href="A propos.html">Retour</a></li>
-                        <li><a href="Commandes.html">Etat de commande</a></li>
-                        <li><a href="A propos.html">Options de paiement</a></li>                   
+                        <li><a href="Acceuil.html">Questions et Reponses</a></li>
+                        <li><a href="Acceuil.html">QaA</a></li>
+                        <li><a href="Acceuil.html">Aide</a></li>                
                     </ul>
                 </div>
 
