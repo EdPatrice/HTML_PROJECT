@@ -11,7 +11,7 @@
 
         $mysqli -> query($sql);
     }
-    //insert_DGI('1', '1000', 'Paye', '2020-12-12');
+    insert_DGI('43', '1000', 'Paye', '2020-12-12');
     function Update_DGI ($no_fiche, $montant, $remarque, $date_paiement)
     {
         $mysqli = use_mysqli();

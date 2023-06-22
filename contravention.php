@@ -23,7 +23,11 @@
 
             Insert_DGI($no_fiche, $montant, 'Non Paye', $date_paiement);
         }
-        header("Location: listeoffense.php");
+        else
+        {
+            echo "Does not work";
+        }
+        //header("Location: listeoffense.php");
     }
 
 
