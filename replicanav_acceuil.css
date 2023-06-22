@@ -102,3 +102,14 @@
     border-radius: 10px 10px 0px 0px;
     padding: 0% 0.5em 0% 0.5em;
 }
+
+.session_info
+{
+    display: block;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    padding-left: 65%;
+    font-weight: bold;
+    font-size: 1em;
+    color:rgb(15, 126, 143);
+}

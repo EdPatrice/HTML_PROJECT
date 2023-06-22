@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include_once(__DIR__."/../page_gestion.php");
 ?>
 
@@ -55,18 +56,18 @@
 -->
 
 <!--.....................................................................................................................................-->
-<?php
-    if (isset($_SESSION['codeAgent']))
-    {
-        echo "<div> Connecte en tant que".$_SESSION['code_agent']."</div>";
-    }
-    else
-    {
-        echo "<div> ERROR </div>";
-    }
-?>
 <div class="row">
       <div class="enregistrer">
+            <?php
+                if (isset($_SESSION['codeAgent']))
+                {
+                    echo "<div class='session_info'> Connecte en tant que".$_SESSION['codeAgent']."</div>";
+                }
+                else
+                {
+                    echo "<div> ERROR </div>";
+                }
+            ?>
             <div class="header1">
                 Enregistrer une offense
             </div>
