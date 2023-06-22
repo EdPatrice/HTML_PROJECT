@@ -1,0 +1,104 @@
+.center_element
+{
+    margin: 0% 7em 0% 7em;
+}
+
+.header
+{
+    display: flex;
+    background-color: white;
+    width: 100%;
+    height: 10em;
+    align-items: center;
+    
+}
+
+.police_logo
+{
+    display: block;
+    max-width: 15%;
+    float: left;
+    position: relative;
+    z-index: 0;
+    --height: 10em;
+
+}
+
+.police_logo img
+{
+    max-width: 80%;
+    height: auto;
+}
+
+.title1
+{
+    display: block;
+    color: rgb(8, 8, 115);
+    font-weight: bolder;
+    float: left;
+}
+
+.title1 h2
+{
+    font-size: 3.5em;
+    margin-bottom: 0.15em;
+    margin-top: 0.5em;
+}
+
+.armoirie
+{
+    display: block;
+    max-width: 15%;
+    float: right;
+    position: relative;
+    
+}
+
+.armoirie img
+{
+    max-width: 80%;
+    height: auto;
+    margin-top: 0.8em;
+}
+
+.options1
+{
+    display: flex;
+    background-color: rgb(17, 26, 110);
+    --color: white ;
+    font-size: 1.5em;
+    height: 2em;
+    align-items: center;
+}
+
+.options1 a
+{
+    font-weight: bolder;
+    display: inline;
+    padding: 0% 0.5em 0% 0.5em;
+    text-decoration: none;
+    color: white;
+}
+
+.options1 a:hover
+{
+    background-color: rgb(1, 1, 66);
+    cursor: pointer;
+    border-radius: 10px 10px 0px 0px;
+    padding: 0% 0.5em 0% 0.5em;
+}
+
+#logout
+{
+    justify-content: flex-end;
+}
+
+#logout:hover
+{
+    background-color: rgb(135, 0, 0);
+    --color: rgb(255, 0, 0);
+    --background-color: rgb(1, 1, 66);
+    cursor: pointer;
+    border-radius: 10px 10px 0px 0px;
+    padding: 0% 0.5em 0% 0.5em;
+}

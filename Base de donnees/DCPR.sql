@@ -1,0 +1,66 @@
+--CREATE DATABASE DCPR
+
+GO 
+
+USE DCPR
+
+DROP TABLE CONDUCTEUR
+CREATE TABLE CONDUCTEUR
+(
+	No_Dossier VARCHAR(50),
+	Nom VARCHAR(50),
+	Prenom VARCHAR(50),
+	Sexe VARCHAR(50),
+	Nif VARCHAR(50) NOT NULL,
+	CONSTRAINT PK_CONDUCTEUR_No_Dossier PRIMARY KEY (No_Dossier)
+	--Primary key 
+	-- Foreign Key 
+)
+
+DROP TABLE CONTRAVENTION 
+CREATE TABLE CONTRAVENTION 
+(
+	No_Fiche VARCHAR(50),
+	No_Dossier VARCHAR(50),
+	Plaque_Vehicule VARCHAR(50),
+	Couleur VARCHAR(50),
+	Marque VARCHAR(50),
+	Code_Agent VARCHAR(50),
+	Adresse VARCHAR(100),
+	Article_Violation VARCHAR(50),
+	Montant_a_Payer INT,
+	Date_Contravention DATE,
+	CONSTRAINT PK_CONTRAVENTION_No_Fiche PRIMARY KEY (No_Fiche),
+	CONSTRAINT FK_CONTRAVENTION_No_Dossier FOREIGN KEY (No_Dossier) REFERENCES CONDUCTEUR(No_Dossier)
+)
+
+DROP TABLE DGI
+CREATE TABLE DGI
+(
+	No_Fiche VARCHAR(50),
+	Montant FLOAT,
+	Remarque VARCHAR(100),
+	Date_Paiement DATE,
+	CONSTRAINT FK_DGI_No_Fiche FOREIGN KEY (No_Fiche) REFERENCES CONTRAVENTION(No_Fiche)
+)
+
+DROP TABLE DCPR
+CREATE TABLE DCPR 
+(
+	Code_Agent VARCHAR(50),
+	Affectation VARCHAR(50),
+	Nom VARCHAR(50),
+	Prenom VARCHAR(50),
+	Sexe VARCHAR(50),
+	CONSTRAINT PK_DCPR_Code_Agent PRIMARY KEY (Code_Agent)
+)
+
+
+/*
+	Table Agent 
+	- username 
+	- password
+	- Nom
+	- Prenom 
+	- Sexe
+*/

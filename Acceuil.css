@@ -1,0 +1,258 @@
+body
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0%;
+    padding: 0%;
+    background-color: rgb(206, 206, 206);
+    background-image: url(images/police4.jpg);
+    background-size: cover;
+    background-position: center 32%;
+    background-repeat: no-repeat;
+}
+
+
+.center_element
+{
+    margin: 0% 7em 0% 7em;
+}
+
+.header
+{
+    display: flex;
+    background-color: white;
+    width: 100%;
+    height: 10em;
+    align-items: center;
+    
+}
+
+.police_logo
+{
+    display: block;
+    max-width: 15%;
+    float: left;
+    position: relative;
+    z-index: 0;
+    --height: 10em;
+
+}
+
+.police_logo img
+{
+    max-width: 80%;
+    height: auto;
+}
+
+.title1
+{
+    display: block;
+    color: rgb(8, 8, 115);
+    font-weight: bolder;
+    float: left;
+}
+
+.title1 h2
+{
+    font-size: 3.5em;
+    margin-bottom: 0.15em;
+    margin-top: 0.5em;
+}
+
+.armoirie
+{
+    display: block;
+    max-width: 15%;
+    float: right;
+    position: relative;
+    
+}
+
+.armoirie img
+{
+    max-width: 80%;
+    height: auto;
+    margin-top: 0.8em;
+}
+
+.options1
+{
+    display: flex;
+    background-color: rgb(17, 26, 110);
+    --color: white ;
+    font-size: 1.5em;
+    height: 2em;
+    align-items: center;
+    width: 100%;
+}
+
+.options1 a
+{
+    font-weight: bolder;
+    display: inline;
+    padding: 0% 0.5em 0% 0.5em;
+    text-decoration: none;
+    color: white;
+}
+
+.options1 a:hover
+{
+    background-color: rgb(1, 1, 66);
+    cursor: pointer;
+    border-radius: 10px 10px 0px 0px;
+    padding: 0% 0.5em 0% 0.5em;
+}
+
+#logout
+{
+    justify-content: flex-end;
+}
+
+#logout:hover
+{
+    background-color: rgb(135, 0, 0);
+    --color: rgb(255, 0, 0);
+    --background-color: rgb(1, 1, 66);
+    cursor: pointer;
+    border-radius: 10px 10px 0px 0px;
+    padding: 0% 0.5em 0% 0.5em;
+}
+
+.options2
+{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 0.3em;
+    margin: 0%;
+    padding: 0%;
+}
+
+.options2 a
+{
+    color: white;
+    background-color: rgb(135, 0, 0);
+    position: relative;
+    display: inline;
+    padding: 0.5em;
+    margin-left: 0.5em;
+    border-radius: 15% 15% 0% 0%;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.options2 a:hover
+{
+    background-color: rgb(57, 2, 2);
+    cursor: pointer;
+    --text-decoration: underline;
+}
+
+
+.body1
+{
+    --display: flex;
+    --max-width: 1200px;
+    --border: 4px solid black;
+    height: auto;
+    background-color: white;
+    padding-bottom: 10em;  
+
+}
+
+.first_row
+{
+    display: flex;
+}
+
+.haitian_flag
+{
+    margin-top: 5em;
+    display: block;
+    max-width: 25%;
+    --float: left;
+    margin-right: 1em;
+}
+
+
+.haitian_flag img
+{
+    width: 100%;
+    height: auto;
+    margin: 30%;
+    border-radius: 5%;
+}
+
+.title2
+{
+    display: flex;
+    font-size: 3.5em;
+    color:rgb(130, 11, 25);
+    margin-left: 1.2em;
+    margin-top: 1.8em;
+    padding-left: 0.2em;
+    border-left: 0.5px solid rgb(129, 128, 128, 0.5);
+    height: 1.5em;
+    width: 100%;
+    clear: left;
+}
+
+.police_picture
+{
+    display: block;
+}
+
+.police_picture img
+{
+    width: 50em;
+    margin: 2em;
+}
+
+.second_row
+{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5em;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px 10px rgba(0,0,0,0.2);
+    
+}
+
+.text_on_haiti_title
+{
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+    color: rgb(130, 11, 25);
+    height: 1.5em;
+    width: 60%;
+    padding: 2em;
+}
+
+.text_on_haiti
+{
+    display: block;
+    width: 70%;
+    margin: 2em;
+    margin-top: 0em;
+    padding-top: 0em;
+    font-size: 1.1em;
+    text-align: justify;
+    padding: 3.6em;
+    padding-bottom: 5em;
+}
+
+.center_element2
+{
+    margin: 0% 13.45em 0% 13.2em;
+    background-repeat: no-repeat; 
+}
+
+.center_element3
+{
+    margin: 0% 11em 0% 11em;
+}
