@@ -2,17 +2,19 @@
 
 .boxer {
 
-  background: rgb(223, 214, 214);
+  background: white;
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 90%;
   margin-left: 22em;
   --padding: 10em  10em;
   justify-content: center;
   --align-items: center;
   --margin-bottom: 12em;
-  border: yellow solid 0.5em;
-  overflow: scroll;
+  border: rgb(47, 47, 1) solid 0.2em;
+  box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  --overflow: scroll;
 }
 
 
@@ -20,9 +22,13 @@
 table {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
-    width: 80%;
-    border: yellow Solid 1em;
-    margin: 12em;
+    width: 98%;
+    margin: 1em;
+    margin-bottom: 3em;
+    border: solid 5px rgb(15, 126, 143);
+    box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+
   }
   
   table td, table th {
@@ -38,7 +44,7 @@ table {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #321993;
+    background-color: rgb(15, 126, 143);
     color: white;
   }
 
@@ -53,3 +59,43 @@ table {
 h1{
   color: black;
 }
+
+
+.boitefiltrer{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+      --padding: 5em;
+      --margin-bottom: 20px;
+
+}
+
+.boitefiltrer input{
+     width: 60%;
+    margin-left: 5em;
+     border-radius: 10px;
+     border: rgb(5, 9, 85) solid 2px;
+     padding: 0.5em 1em 0.5em 1em;
+}
+
+.recherchelabel label{
+  display: flex;
+  font-size: 20px;
+  font-weight: bolder;
+  color: rgb(15, 126, 143);
+  justify-content: center;
+}
+
+.titreofense {
+    display: flex;
+    width: 100%;
+    font-weight: bolder;
+    align-content: center;
+    color: white;
+   justify-content: center;
+  background-color: rgb(15, 126, 143);
+  padding-top: 0.8em; 
+    padding-bottom: 0.8em;
+    border-radius: 7px 7px 0px 0px;
+}
+

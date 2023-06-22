@@ -1,4 +1,5 @@
 <?php
+    session_start();
      include("Page_gestion.php");
      include_once(__DIR__.'\Contravention\contravention_queries.php');
 
@@ -20,18 +21,29 @@
 <body>
     
   <div class="boxer"> 
+          <div class="titreofense">
+                <h1  style="color:white">Liste Offense</h1><br>
 
-    <h1>Liste Offense</h1>
-    <p>Liste de toutes les offences</p>
+          </div>
     <br><br>
 
-    
-    <label for="filter">Recherche</label> 
+    <div class="recherchelabel">
+      
+      <label for="filter">Recherche</label>
+
+    </div>
+
+    <br>
 <!--filtrage avec no dossier, code agent -->
+  <div class="boitefiltrer">
     <input type="text" name="filter" value="" id="No_Dossier" placeholder="Recherche avec No_Dossier" onkeyup="myFunction()"/>
+    <br>
     <input type="text" name="filter" value="" id="Code_agent" placeholder="Recherche avec Code Agent" onkeyup="myFunction2()"/>
+    <br>
     <input type="text" name="filter" value="" id="Date" placeholder="Recherche avec Date" onkeyup="myFunction3()"/>
-  <!-- filtrage selon  date  et date selon no dossier 
+  </div>
+  <br><br>
+    <!-- filtrage selon  date  et date selon no dossier 
   <div class="case"> 
     
     <input type="text" name="filter" value="" id="Nodo_date" placeholder="Recherche avec No dossier" />
