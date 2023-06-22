@@ -1,5 +1,24 @@
 <?php
     session_start();
+
+    include_once("contravention_queries.php");
+    if(isset($_POST['BtnEnvoyer']))
+    {
+        $dossier = $_POST['TxtNoDossier'];
+        $couleur = $_POST['TxtCouleur'];
+        $marque = $_POST['TxtMarque'];
+        $plaque = $_POST['TxtPlaque'];
+        $code_agent = $_POST['TxtCodeAgent'];
+        $adresse = $_POST['TxtAdresse'];
+        $montant = $_POST['TxtMontant'];
+        $date = $_POST['Dtdoffense'];
+        $offense = $_POST['offense'];
+
+        Insert_contravention($dossier, $plaque, $couleur, $marque, $code_agent, $adresse, $offense, $montant, $date);
+        header("Location: ../listeoffense.php");
+    }
+
+
     include_once(__DIR__."/../page_gestion.php");
 ?>
 
@@ -75,23 +94,23 @@
            <div class="contenu">
               <form action="" method="post">
 
-                    <table>
+              <table>
                         <tr id="askdossier"> 
                             <td class="conducteur">
                                     <input type="text" name ="TxtNoDossier" placeholder="No Dossier" required>
                             </td>
+                            <td class="conducteur">       <!--utilisateur-->                                  
+                                <input type="text" name ="TxtCouleur" placeholder="Couleur"  required>
+                            </td>
                             <td class="conducteur">
-                                <input type="text" name ="TxtMarque" placeholder="Marque" required>
+                                <input type="text" name ="TxtMarque" placeholder="Marque"  required>
                             </td>
                         </tr>
 
                         <tr>
-                                <td  class="conducteur_agent" >                                
-                                    <input type="text" name ="TxtCouleur" placeholder="Couleur" required>
-                                </td>
 
-                                <td class="conducteur_agent">
-                                  <input type="text" name ="TxtPlaque" placeholder="Plaque vehicule" required>
+                                <td class="conducteur_agent1">
+                                  <input type="text" name ="TxtPlaque" placeholder="Plaque vehicule"   required>
                                 </td>
                         </tr>
 
@@ -115,7 +134,7 @@
                           <td class="conducteur1">
                                 <!--Date input-->
                                 <label for="Dtdoffense">Date d'offense</label>
-                                <input type="date" name='Dtdoffense'>
+                                <input type="date" name="Dtdoffense" required>
                             </td>
                             
                         </tr>                                              
@@ -126,7 +145,7 @@
                             <select class="offense" name="offense" >
                                             <option selected disabled>Article viole</option>
                                             <option value="Article 101-Signalisation">Article 101-Signalisation</option>
-                                            <option value="Article 82-limite vitesse ">Article 82-limite vitesse</option>
+                                            <option value="Article 82-limite vitesse">Article 82-limite vitesse</option>
                                             <option value="Article 40-Disposition d un permis">Article 40-Disposition d un permis</option>
                                             <option value="Article 17-Disposition de carte d identification">Article 17-Disposition de carte d identification</option>
                                             <option value="Article 44-Etat d ivresse">Article 44-Etat d ivresse</option>
@@ -191,7 +210,7 @@
 </div>
 -->
 <?php
-    include_once("contravention_queries.php");
+    /*include_once("contravention_queries.php");
     if(isset($_POST['BtnEnvoyer']))
     {
         $dossier = $_POST['TxtNoDossier'];
@@ -205,7 +224,8 @@
         $offense = $_POST['offense'];
 
         Insert_contravention($dossier, $plaque, $couleur, $marque, $code_agent, $adresse, $offense, $montant, $date);
-    }
+        header("Location: ./listeoffense.php");
+    }*/
 ?>
 
 </body>
