@@ -18,7 +18,8 @@
         Insert_contravention($dossier, $plaque, $couleur, $marque, $code_agent, $adresse, $offense, $montant, $date);
         if (isset($_GET['No_Fiche']))
         {
-            $date_paiement = date_add($date, date_interval_create_from_date_string('15 days'));
+            //$date_paiement = date_add($date, date_interval_create_from_date_string('15 days'));
+            $date_paiement = date_add($date, date_interval_create_from_date_string("15 days"));
             $mysqli = use_mysqli();
             $sql = "SELECT no_fiche FROM contravention WHERE
                     No_Dossier = '$dossier' AND
@@ -31,18 +32,16 @@
                     Montant = '$montant' AND
                     Date_Offense = '$date'";
             $result = $mysqli -> query($sql);
-            
+
+            $no_fiche = $result -> fetch_assoc()['no_fiche'];
+
             Insert_DGI($no_fiche, $montant, 'Non Paye', $date_paiement);
         }
-<<<<<<< Updated upstream
         else
         {
             echo "Does not work";
         }
-        //header("Location: listeoffense.php");
-=======
-        header("Location:listoffense.php");
->>>>>>> Stashed changes
+        header("Location: listoffense.php");
     }
 
 
