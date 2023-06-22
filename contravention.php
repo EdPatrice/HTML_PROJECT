@@ -2,6 +2,7 @@
     session_start();
 
     include_once("contravention_queries.php");
+    include_once("dgi.php");
     if(isset($_POST['BtnEnvoyer']))
     {
         $dossier = $_POST['TxtNoDossier'];
