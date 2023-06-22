@@ -23,11 +23,15 @@
 
             Insert_DGI($no_fiche, $montant, 'Non Paye', $date_paiement);
         }
+<<<<<<< Updated upstream
         else
         {
             echo "Does not work";
         }
         //header("Location: listeoffense.php");
+=======
+        header("Location:listoffense.php");
+>>>>>>> Stashed changes
     }
 
 

@@ -11,7 +11,7 @@
         $sexe = $_POST['RdSexe'];
 
         Insert_agent ($codeAgent, $affectation, $nom, $prenom, $sexe);
-        //header("Location: ../listeoffense.php");
+        header("Location:listoffense.php");
     }
 ?>
 

@@ -11,7 +11,7 @@
         $nif = $_POST['TxtNIF'];
 
         Insert_conducteur ($dossier, $nom, $prenom, $sexe, $nif);
-        //header("Location: ../listeoffense.php");
+        header("Location:listoffense.php");
     }
 ?>
 
