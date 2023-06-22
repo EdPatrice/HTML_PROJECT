@@ -37,7 +37,7 @@
                 $_SESSION['password'] = $password;
 
                 //Redirect to home page
-                header('location: ./Accueil.html');
+                header('location:Accueil.html');
                 exit();
             }
             else 

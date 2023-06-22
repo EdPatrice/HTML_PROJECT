@@ -8,7 +8,7 @@
 
                  }
                  else {
-                    header("Location:listeoffense.php");
+                    header("Location:listoffense.php");
                     }
                  
            ?>
@@ -297,7 +297,7 @@
         $offense = $_POST['offense'];
 
         Update_contravention($no_fiche, $dossier, $plaque, $couleur, $marque, $code_agent, $adresse, $offense, $montant, $date);
-        header("Location:listeoffense.php");
+        header("Location:listoffense.php");
         }
     ?>
 <!--.....................................................................................................................................-->
